@@ -1,5 +1,5 @@
 lint: 
-	docker run --rm -it -v "$(PWD):/app" -w /app golangci/golangci-lint golangci-lint run controllers/ database/ routes/ models/
+	docker run --rm -it -v "$(CURDIR):/app" -w /app golangci/golangci-lint golangci-lint run controllers/ database/ routes/ models/
 test:
 	docker compose exec app go test main_test.go
 start:
